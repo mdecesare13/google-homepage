@@ -4,10 +4,31 @@
         display: block;
         width:auto;
     }
+    .crop-mag {
+        width: 10%;
+        height: auto;
+        overflow: hidden;
+    }
+    .crop-mag img {
+        width: 126px;
+        height: 116px;
+        object-fit: cover;
+        object-position: 0% 100%;
+    }
+    .mic {
+        max-width: 1%;
+        height: auto;
+    }
 </style>
 
 
 <main>
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="Google-Logo">
-
+    <div class="Search-Bar">
+        <div class="crop-mag">
+            <img src="https://raw.githubusercontent.com/mdecesare13/google-homepage/master/magnifying-glass.png" alt="Magnifying Glass"> <!--252 x 116px-->
+        </div>
+        <input type="text" placeholder="Search Google or type a URL">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png" alt="Microphone" class="mic">
+    </div>
 </main>
