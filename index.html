@@ -4,17 +4,21 @@
         display: block;
         width:auto;
     }
-    .Search-Bar {
-        margin: auto;
-        display: block;
-        width: auto;
+    .search-parent{
+        text-align: center; /*declare a parent block that centers all of its contents to center an entire div*/
+    }
+    .search-bar {
+        display: inline-block; /*set the div to inline-block so that text-align center applies to it and it automatically sets the width of the div to its contents*/
+        width: 315px;
+        border: 1px solid rgb(196, 193, 193);
+        border-radius: 25px;
     }
     .mag {
-        max-width: 1%;
+        max-width: 5%;
         height: auto;
     }
     .mic {
-        max-width: 1%;
+        max-width: 5%;
         height: auto;
     }
 </style>
@@ -22,9 +26,11 @@
 
 <main>
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="Google-Logo">
-    <div class="Search-Bar">
-        <img src="https://raw.githubusercontent.com/mdecesare13/google-homepage/master/mag-glass2.png" alt="Magnifying Glass" class="mag"> <!--252 x 116px-->
-        <input type="text" placeholder="Search Google or type a URL">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png" alt="Microphone" class="mic">
+    <div class="search-parent">
+        <div class="search-bar">
+            <img src="https://raw.githubusercontent.com/mdecesare13/google-homepage/master/mag-glass2.png" alt="Magnifying Glass" class="mag"> <!--252 x 116px-->
+            <input type="text" placeholder="Search Google or type a URL">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png" alt="Microphone" class="mic">
+        </div>
     </div>
 </main>
