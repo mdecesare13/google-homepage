@@ -12,6 +12,11 @@
         position: relative;
         top: 200;
     }
+    .buttons{
+        text-align: center;
+        position: relative;
+        top: 230;
+    }
     .search-bar {
         display: inline-block; /*set the div to inline-block so that text-align center applies to it and it automatically sets the width of the div to its contents*/
         width: 550;
@@ -28,24 +33,32 @@
         position: absolute;
         top: 32%; /* Combined with position absolute, this takes the top left of the magnifying class and puts it at the center when set to 50%. 
                      Thus I set it to a little less than 50% so the middle of the glass is centered (same for text-box and mic) */
-        left: 10;
+        left: 15;
     }
     .mic {
-        width: 15;
+        width: 14;
         height: auto;
         position: absolute;
-        top: 20%;
-        right: 15;;
+        top: 25%;
+        right: 20;
     }
     .text-box {
         border: 0;
-        width: 530;
+        width: 510;
         position: absolute;
         top: 30%;
         left: 35;
     }
     textarea:focus, input:focus{ /* this is to get rid of the blue outline that comes up otherwise when you click on the test box */
         outline: none;
+    }
+    .button{ /* see for button help https://www.w3schools.com/css/css3_buttons.asp */
+        border: none;
+        background-color: rgba(236, 236, 236, 0.74);
+        color:rgba(49, 48, 48, 0.74);
+        border-radius: 3px;
+        font-size: 14px;
+        padding: 10px 16px;
     }
 </style>
 
@@ -58,5 +71,9 @@
             <input type="text" placeholder="" class="text-box">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png" alt="Microphone" class="mic">
         </div>
+    </div>
+    <div class="buttons">
+        <button type="button" class="button">Google Search</button> <!-- Use the same class for the buttons because they should be formatted the exact same -->
+        <button type="button" class="button">I'm Feeling Lucky</button>
     </div>
 </main>
