@@ -1,25 +1,51 @@
 <style>
+    /* For now, I use position relative to place general things (search bar, google image, im feeling lucky) then absolute to place other things*/
     .Google-Logo {
         margin: auto;
         display: block;
-        width:auto;
+        width: auto;
+        position: relative;
+        top: 170;
     }
     .search-parent{
         text-align: center; /*declare a parent block that centers all of its contents to center an entire div*/
+        position: relative;
+        top: 200;
     }
     .search-bar {
         display: inline-block; /*set the div to inline-block so that text-align center applies to it and it automatically sets the width of the div to its contents*/
-        width: 315px;
+        width: 550;
+        height: 50;
         border: 1px solid rgb(196, 193, 193);
         border-radius: 25px;
+        position: relative; /* this is to let me position the magnifying glass and mic relative to the div */
+        /* line-height: 40;  Allows me to define the vertical position of things within the div (relative to this selected line-height) */
     }
     .mag {
-        max-width: 5%;
+        width: 15;
         height: auto;
+        top: 100%;
+        position: absolute;
+        top: 32%; /* Combined with position absolute, this takes the top left of the magnifying class and puts it at the center when set to 50%. 
+                     Thus I set it to a little less than 50% so the middle of the glass is centered (same for text-box and mic) */
+        left: 10;
     }
     .mic {
-        max-width: 5%;
+        width: 15;
         height: auto;
+        position: absolute;
+        top: 20%;
+        right: 15;;
+    }
+    .text-box {
+        border: 0;
+        width: 530;
+        position: absolute;
+        top: 30%;
+        left: 35;
+    }
+    textarea:focus, input:focus{ /* this is to get rid of the blue outline that comes up otherwise when you click on the test box */
+        outline: none;
     }
 </style>
 
@@ -29,7 +55,7 @@
     <div class="search-parent">
         <div class="search-bar">
             <img src="https://raw.githubusercontent.com/mdecesare13/google-homepage/master/mag-glass2.png" alt="Magnifying Glass" class="mag"> <!--252 x 116px-->
-            <input type="text" placeholder="Search Google or type a URL">
+            <input type="text" placeholder="" class="text-box">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png" alt="Microphone" class="mic">
         </div>
     </div>
