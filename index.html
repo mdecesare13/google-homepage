@@ -1,4 +1,117 @@
 <style>
+    /* all top buttons */
+    .top-buttons {
+        position: relative;
+    }
+    .about, .store, .gmail, .images {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        color: rgb(49, 49, 49);
+    }
+    .about:hover, .store:hover, .gmail:hover, .images:hover {
+        text-decoration: underline;
+    }
+    .about:focus, .store:focus, .gmail:focus, .images:focus, .sign-in:focus {
+        outline: 0;
+    }
+    .about {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    .store {
+        position: absolute;
+        top: 15px;
+        left: 78px;
+    }
+    .gmail {
+        position: absolute;
+        top: 15px;
+        right: 208px;
+    }
+    .images {
+        position: absolute;
+        top: 15px;
+        right: 145px;
+    }
+    .google-apps {
+        width: 15px;
+        height: auto;
+        position: absolute;
+        top: 16px;
+        right: 112px;
+    }
+    .sign-in {
+        background: rgb(54, 136, 230);
+        color: white;
+        border: none;
+        padding: 7px 11px 7px;
+        border-radius: 3px;
+        position: absolute;
+        top: 10px;
+        right: 24px;
+    }
+
+    /* Footer style */
+    .footer {
+        background: rgb(242, 243, 245);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+    }
+    .advertising, .business, .how-search-works, .privacy, .terms, .settings {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        color: rgb(112, 112, 112);
+        font-size: 15px;
+    }
+    .advertising:hover, .business:hover, .how-search-works:hover, .privacy:hover, .terms:hover, .settings:hover {
+        text-decoration: underline;
+    }
+    .advertising:focus, .business:focus, .how-search-works:focus, .privacy:focus, .terms:focus, .settings:focus {
+        outline: 0;
+    }
+    .advertising:active, .business:active, .how-search-works:active, .privacy:active, .terms:active, .settings:active {
+        color: red;
+    }
+    .advertising {
+        position: absolute;
+        top: 15px;
+        left: 18px;
+    }
+    .business {
+        position: absolute;
+        top: 15px;
+        left: 128px;
+    }
+    .how-search-works {
+        position: absolute;
+        top: 15px;
+        left: 218px;
+    }
+    .privacy {
+        position: absolute;
+        top: 15px;
+        right: 188px;
+    }
+    .terms {
+        width: 15px;
+        height: auto;
+        position: absolute;
+        top: 15px;
+        right: 148px;
+    }
+    .settings {
+        width: 15px;
+        height: auto;
+        position: absolute;
+        top: 15px;
+        right: 78px;
+    }
+
+    /* rest */
     /* For now, I use position relative to place general things (search bar, google image, im feeling lucky) then absolute to place other things*/
     .Google-Logo {
         margin: auto;
@@ -16,15 +129,20 @@
         text-align: center;
         position: relative;
         top: 230;
+        left: 43%;
+        display: table; /* display table throws off the center text align, so need the left position */
     }
     .search-bar {
         display: inline-block; /*set the div to inline-block so that text-align center applies to it and it automatically sets the width of the div to its contents*/
-        width: 550;
-        height: 50;
+        width: 565;
+        height: 45;
         border: 1px solid rgb(196, 193, 193);
         border-radius: 25px;
         position: relative; /* this is to let me position the magnifying glass and mic relative to the div */
         /* line-height: 40;  Allows me to define the vertical position of things within the div (relative to this selected line-height) */
+    }
+    .search-bar:hover {
+        box-shadow: 0px 0px 4px rgb(185, 185, 185);
     }
     .mag {
         width: 15;
@@ -46,13 +164,14 @@
         border: 0;
         width: 510;
         position: absolute;
-        top: 30%;
+        top: 28%;
         left: 35;
+        font-size: 16px;
     }
     textarea:focus, input:focus{ /* this is to get rid of the blue outline that comes up otherwise when you click on the test box */
         outline: none;
     }
-    .button{ /* see for button help https://www.w3schools.com/css/css3_buttons.asp */
+    .search-buttons{ /* see for button help https://www.w3schools.com/css/css3_buttons.asp */
         border: none;
         background-color: rgba(236, 236, 236, 0.74);
         color:rgba(49, 48, 48, 0.74);
@@ -60,10 +179,27 @@
         font-size: 14px;
         padding: 10px 16px;
     }
+    .search-buttons:hover {
+        color: black;
+        border: 0.5px solid rgb(207, 207, 207);
+        box-shadow: 0px 0px 2px rgb(185, 185, 185);
+    }
+    .indiv-button { /* add padding to the two buttons outside them */
+        padding: 6px;
+        display: table-cell;
+    }
 </style>
 
 
 <main>
+    <div class="top-buttons">
+        <button class="about" type="button">About</button>
+        <button class="store" type="button">Store</button>
+        <button class="gmail" type="button">Gmail</button>
+        <button class="images" type="button">Images</button>
+        <input type="image" id="image" alt="Google Apps" class="google-apps" src="https://raw.githubusercontent.com/mdecesare13/google-homepage/master/google-apps.png">
+        <button type="button" class="sign-in"><b>Sign in</b></button>
+    </div>
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="Google-Logo">
     <div class="search-parent">
         <div class="search-bar">
@@ -73,7 +209,19 @@
         </div>
     </div>
     <div class="buttons">
-        <button type="button" class="button">Google Search</button> <!-- Use the same class for the buttons because they should be formatted the exact same -->
-        <button type="button" class="button">I'm Feeling Lucky</button>
+        <div class="indiv-button">
+            <button type="button" class="search-buttons">Google Search</button> <!-- Use the same class for the buttons because they should be formatted the exact same -->
+        </div>
+        <div class="indiv-button">
+            <button type="button" class="search-buttons">I'm Feeling Lucky</button>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="advertising" type="button">Advertising</button>
+        <button class="business" type="button">Business</button>
+        <button class="how-search-works" type="button">How Search Works</button>
+        <button class="Privacy" type="button">Privacy</button>
+        <button class="terms" type="button">Terms</button>
+        <button class="settings" type="button">Settings</button>
     </div>
 </main>
